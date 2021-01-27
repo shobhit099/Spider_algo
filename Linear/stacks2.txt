@@ -1,0 +1,40 @@
+https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/a-game-of-numbers-1-5d3a8cb3/
+
+#include<iostream>
+using namespace std;
+
+int main()
+ {
+	 int num,i,temp,j,f;
+	 cin>>num;
+	 long long int arr[num];
+	 for(i=0;i<num;i++)
+	 	cin>>arr[i];
+	for(i=0;i<num;i++)
+	{
+		f=0;
+		for(j=i+1;j<num;j++)
+		{
+			if(arr[i]<arr[j])
+			{
+				for(temp=j+1;temp<num;temp++)
+				{
+					if(arr[j]>arr[temp])
+					{
+						f++;
+						break;
+					}	
+					
+				}
+				break;
+			}
+		}
+		if(f==1)
+			cout<<arr[temp]<<" ";
+		else
+			cout<<"-1 ";
+	}
+
+
+
+ }
