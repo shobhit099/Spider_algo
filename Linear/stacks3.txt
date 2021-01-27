@@ -1,1 +1,41 @@
 https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/balanced-brackets-3-4fc590c6/
+
+#include<iostream>
+#include<stack>
+
+using namespace std;
+
+int main()
+{
+	int i,len,t;
+	cin>>t;
+	while(t>0)
+	{
+    	string st;
+    	stack<char> sta;
+    	cin>>st;
+    	len=st.length();
+    	for(i=0;i<len;i++)
+    	{
+    		if(sta.empty()==true)
+    			sta.push(st[i]);
+    		else
+    		{
+    			if(st[i]==')' && sta.top()=='(') 
+    			    sta.pop();
+    			else if (st[i]==']' && sta.top()=='[')
+    			    sta.pop();
+    			else if(st[i]=='}' && sta.top()=='{')
+    				sta.pop();
+    			else
+    				sta.push(st[i]);
+    		}
+    	}
+    	if(sta.empty()==true)
+    		cout<<"YES"<<endl;
+    	else
+    		cout<<"NO"<<endl;
+    		
+    	t--;
+	}
+}
