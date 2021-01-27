@@ -1,0 +1,51 @@
+https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/i-hate-even-subarrays/
+
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+
+int main() {
+	stack<char> st;
+	unsigned int num,len1;
+	string s;
+	cin >> num;									
+	while(num>0)
+	{
+		cin>>s;
+		len1=s.length();
+		for(unsigned int i=0;i<len1;i++)
+		{
+			if(st.empty()==true)
+				st.push(s[i]);
+			else
+			{
+				if(s[i]==st.top())
+					st.pop();
+				else
+					st.push(s[i]);
+			}
+		}
+		stack<char> st1;
+		if(st.empty()==true)
+			cout<<"KHALI"<<endl;
+		while(st.empty() == false)
+		{
+			char a;
+			a=st.top();
+			st1.push(a);
+			st.pop();
+		}
+		
+		while(st1.empty()==false)
+		{
+			char a;
+			a=st1.top();
+			cout<<a;	
+			st1.pop();
+		}
+		cout<<endl;
+		num--;
+	}	
+}
