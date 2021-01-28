@@ -1,0 +1,23 @@
+https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/repeated-k-times/submissions/
+
+#include<stdio.h>
+int main()
+{
+	int arr[100001]={0},count,num,i,min=100001,k,temp;
+	scanf("%d",&num);
+	for(i=0;i<num;i++)
+	{
+		scanf("%d",&temp);
+		arr[temp]++;
+	}
+	scanf("%d",&k);
+	for(i=1;i<100001;i++)
+	{
+		if(arr[i]>0 && min>i && arr[i]==k )
+		{
+			min=i;
+		}  
+	}
+	printf("%d",min);
+	return 0;
+}
