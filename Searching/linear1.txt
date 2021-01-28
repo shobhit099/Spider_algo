@@ -1,0 +1,32 @@
+https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/special-shop-69904c91/submissions/
+
+#include<stdio.h>
+#include<math.h>
+
+
+int main()
+{
+	long int num,i,arr[3],x,y,min;
+	scanf("%d",&num);
+	for(i=0;i<num;i++)
+	{
+		min=100000000;
+		scanf("%ld",&arr[0]);
+		scanf("%ld",&arr[1]);
+		scanf("%ld",&arr[2]);
+		if(arr[1]>arr[2])
+		{
+         	x = round((arr[0]*arr[2]*1.0)/(arr[1]+arr[2]));
+			y = arr[0]-x;
+		}
+     	else
+     	{
+         y= round((arr[0]*arr[1] *1.0)/(arr[1]+arr[2]));
+		 x = arr[0]-y;
+		}
+		min=arr[1]*pow(x,2)+arr[2]*pow(y,2);
+		printf("%ld\n",min);
+	}
+	
+	
+}
